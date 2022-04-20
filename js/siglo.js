@@ -3,7 +3,7 @@ const getData = () => {
     let month = document.getElementById("valueMonth").value;
     let year = document.getElementById("valueYear").value;
     
-    // VERIFICACION DE DIA
+    // VALIDACION DE DIA
 
     if(!day){
         alert("Ingresa dia valido.");
@@ -15,7 +15,7 @@ const getData = () => {
         }
     }
 
-    // VERIFICACION DE MES
+    // VALIDACION DE MES
 
     if(!month){
         alert("Ingresa un mes valido.");
@@ -27,7 +27,7 @@ const getData = () => {
         }
     }
 
-    // VERIFICACION DE YEAR
+    // VALIDACION DE YEAR
 
     if(!year){
         alert("Ingresa un a;o valido.");
@@ -37,12 +37,23 @@ const getData = () => {
         }
     }
 
+    // CALCULO SIGLO
 
+    function calcularSiglo(dNum, mNum, yNum){
+        yNum = yNum / 100;
 
+        if(yNum - Math.floor(yNum) == 0){
+            alert("Bienvenido al " + dNum + " del " + mNum + " del siglo " + parseInt(yNum));
+        } else if(yNum - Math.floor(yNum) > 0){
+            yNum++;
+            alert("Bienvenido al " + dNum + " del " + mNum + " del siglo " + parseInt(yNum));
+        }
+    }
+
+    calcularSiglo(day, month, year);
 
 
 
 
 
 }
-
